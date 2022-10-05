@@ -1,0 +1,3 @@
+tr.issue td.duplicates { white-space: normal; text-align: left; }
+tr.issue td.duplicates span { white-space: nowrap; }
+#duplicates table.issues { border: 0; }

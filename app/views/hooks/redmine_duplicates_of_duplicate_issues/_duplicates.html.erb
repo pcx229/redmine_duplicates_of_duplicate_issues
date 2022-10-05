@@ -1,0 +1,7 @@
+<div id="duplicates">
+	<hr />
+	<p>
+	<strong><%= l(:field_duplicates) %></strong>
+	</p>
+	<%= render_issue_duplicates(@issue, @issue.direct_indirect_duplicates) %>
+</div>

@@ -1,0 +1,6 @@
+he:
+  field_duplicates: ההעתקים
+  field_has_direct_indirect_duplicates: יש העתק ישיר או עקיף
+  duplicates_text_direct: ישיר
+  duplicates_text_indirect: עקיף
+  duplicates_text_root: מקור

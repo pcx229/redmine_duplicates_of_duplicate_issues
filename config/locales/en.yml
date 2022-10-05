@@ -1,0 +1,6 @@
+en:
+  field_duplicates: Duplicates
+  field_has_direct_indirect_duplicates: Has direct/indirect duplicates
+  duplicates_text_direct: Direct
+  duplicates_text_indirect: Indirect
+  duplicates_text_root: root
