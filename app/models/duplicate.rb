@@ -60,7 +60,7 @@ class Duplicate < ActiveRecord::Base
 	end
 
 	def self.duplicates(issue_id)
-		Duplicate.where("group_id == (SELECT group_id FROM #{Duplicate.table_name} WHERE issue_id == #{issue_id} LIMIT 1) AND issue_id != #{issue_id}")
+		Duplicate.where("group_id = (SELECT group_id FROM #{Duplicate.table_name} WHERE issue_id = #{issue_id} LIMIT 1) AND issue_id != #{issue_id}")
 	end
 
 	def is_root

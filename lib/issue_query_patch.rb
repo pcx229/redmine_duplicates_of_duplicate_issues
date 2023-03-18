@@ -54,7 +54,7 @@ module IssueQueryPatch
 			 " AND #{Issue.table_name}.id #{op}" \
 			  " (SELECT DISTINCT org.issue_id" \
 			   " FROM #{Duplicate.table_name} org, #{Duplicate.table_name} dup" \
-			   	" WHERE org.issue_id != dup.issue_id AND org.group_id == dup.group_id" \
+			   	" WHERE org.issue_id != dup.issue_id AND org.group_id = dup.group_id" \
 				 " AND dup.issue_id = #{value.first.to_i})"
 		  when "=p", "=!p", "!p"
 			op = (operator == "!p" ? 'NOT IN' : 'IN')
@@ -63,7 +63,7 @@ module IssueQueryPatch
 			 " AND #{Issue.table_name}.id #{op}" \
 			  " (SELECT DISTINCT org.issue_id" \
 			   " FROM #{Duplicate.table_name} org, #{Duplicate.table_name} dup, #{Issue.table_name} relissues" \
-			    " WHERE org.issue_id != dup.issue_id AND org.group_id == dup.group_id" \
+			    " WHERE org.issue_id != dup.issue_id AND org.group_id = dup.group_id" \
 				 " AND dup.issue_id = relissues.id" \
 				 " AND relissues.project_id #{comp} #{value.first.to_i})"
 		  when "*o", "!o"
@@ -72,7 +72,7 @@ module IssueQueryPatch
 			 " AND #{Issue.table_name}.id #{op}" \
 			  " (SELECT DISTINCT org.issue_id" \
 			   " FROM #{Duplicate.table_name} org, #{Duplicate.table_name} dup, #{Issue.table_name} relissues" \
-			    " WHERE org.issue_id != dup.issue_id AND org.group_id == dup.group_id" \
+			    " WHERE org.issue_id != dup.issue_id AND org.group_id = dup.group_id" \
 				 " AND dup.issue_id = relissues.id" \
 				 " AND relissues.status_id IN" \
 				   " (SELECT id FROM #{IssueStatus.table_name}" \
