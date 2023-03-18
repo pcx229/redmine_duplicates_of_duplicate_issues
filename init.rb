@@ -3,7 +3,7 @@ require 'redmine'
 require_relative 'lib/issue_patch'
 require_relative 'lib/issue_query_patch'
 require_relative 'lib/issue_relation_patch'
-require_relative 'lib/views_hook'
+require_relative 'lib/include_style_for_duplicate_column_hook'
 require_relative 'lib/issues_helper_patch'
 require_relative 'lib/duplicates_query_column'
 
